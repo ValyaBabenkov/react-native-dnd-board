@@ -15,6 +15,7 @@ const Column = ({
   columnWidth,
   onDragStartCallback,
   onRowPress = () => {},
+  flatListRowProps
 }) => {
   const [rows, setRows] = useState(column.rows);
 
@@ -83,6 +84,7 @@ const Column = ({
         onScroll={onScroll}
         onScrollEndDrag={onScrollEnd}
         onMomentumScrollEnd={onScrollEnd}
+        {...flatListRowProps}
       />
     </View>
   );
