@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatListProps, ViewProps, ViewStyle, ScrollView } from 'react-native'
+import { ViewProps, ViewStyle } from 'react-native'
 
 export type IDndRowData<T> = T & {
 	id: string
@@ -59,8 +59,6 @@ interface Props<T> {
 	xScrollThreshold?: number
 	yScrollThreshold?: number
 	dragSpeedFactor?: number
-	rootScrollView?: ScrollView
-	flatListRowProps?:FlatListProps
 }
 
 declare const DraggableBoard: <T>(props: Props<T>) => JSX.Element

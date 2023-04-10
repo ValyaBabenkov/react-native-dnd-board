@@ -40,7 +40,6 @@ const DraggableBoard = ({
 	onDragEnd = () => {},
 	style: boardStyle,
 	horizontal = true,
-	rootScrollView,
 	flatListRowProps
 }) => {
 	const [, setForceUpdate] = useState(false)
@@ -53,7 +52,7 @@ const DraggableBoard = ({
 	const pageIndex = useSharedValue(0)
 	const columnsLength = useSharedValue(repository.getColumns().length)
 	const containerWidth = useSharedValue(0)
-	const gapSpace = useSharedValue(0)
+	const gapSpace = useSharedValue(24)
 	const autoScrollX = useSharedValue(0)
 	const [mounted, setMounted] = useState(false)
 
@@ -254,7 +253,6 @@ const DraggableBoard = ({
 					columnWidth={columnWidth}
 					onRowPress={onRowPress}
 					onDragStartCallback={onDragStart}
-					{...flatListRowProps}
 				/>
 			)
 
@@ -356,7 +354,6 @@ const DraggableBoard = ({
 					onScroll={onScroll}
 					onMomentumScrollEnd={onScrollEnd}
 					onScrollEndDrag={onScrollEnd}
-					{...rootScrollView}
 				>
 					{renderColumns()}
 					{Utils.isFunction(accessoryRight) ? accessoryRight() : accessoryRight}
