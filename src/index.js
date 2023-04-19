@@ -40,6 +40,7 @@ const DraggableBoard = ({
 	onDragEnd = () => {},
 	style: boardStyle,
 	horizontal = true,
+							rootScrollProps
 }) => {
 	const [, setForceUpdate] = useState(false)
 	const [hoverComponent, setHoverComponent] = useState(null)
@@ -353,6 +354,7 @@ const DraggableBoard = ({
 					onScroll={onScroll}
 					onMomentumScrollEnd={onScrollEnd}
 					onScrollEndDrag={onScrollEnd}
+					{...rootScrollProps}
 				>
 					{renderColumns()}
 					{Utils.isFunction(accessoryRight) ? accessoryRight() : accessoryRight}
