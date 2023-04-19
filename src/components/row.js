@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { TouchableWithoutFeedback } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import Animated from 'react-native-reanimated';
 
 import style from '../style';
@@ -24,14 +24,14 @@ const Row = memo(({ row, move, renderItem, hidden, onPress, onDragStartCallback 
   });
 
   return (
-    <TouchableWithoutFeedback
-      onLongPress={onDragBegin}
-      delayLongPress={300}
+    <TouchableOpacity
+      // onLongPress={onDragBegin}
+      // delayLongPress={300}
       onPress={onPress}>
       <Animated.View style={hidden ? style.invisible : style.visible}>
         {component}
       </Animated.View>
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
   );
 });
 

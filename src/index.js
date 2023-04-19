@@ -40,7 +40,6 @@ const DraggableBoard = ({
 	onDragEnd = () => {},
 	style: boardStyle,
 	horizontal = true,
-	flatListRowProps
 }) => {
 	const [, setForceUpdate] = useState(false)
 	const [hoverComponent, setHoverComponent] = useState(null)
@@ -52,7 +51,7 @@ const DraggableBoard = ({
 	const pageIndex = useSharedValue(0)
 	const columnsLength = useSharedValue(repository.getColumns().length)
 	const containerWidth = useSharedValue(0)
-	const gapSpace = useSharedValue(24)
+	const gapSpace = useSharedValue(0)
 	const autoScrollX = useSharedValue(0)
 	const [mounted, setMounted] = useState(false)
 
